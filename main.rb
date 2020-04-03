@@ -1,9 +1,12 @@
 require_relative 'lib/product'
 require_relative 'lib/book'
 require_relative 'lib/film'
+require_relative 'lib/product_collection'
 
-params = {price: 300, balance: 10}
+collection = ProductCollection.from_dir("#{__dir__}/data")
 
-film = Film.new(params)
+#collection.sort!(by: :balance, order: :asc)
 
-puts "Фильм Леон стоит #{film.price}$"
+collection.to_a.each do |product|
+  puts product
+end
