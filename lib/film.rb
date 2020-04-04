@@ -27,7 +27,7 @@ class Film < Product
   end
 
   def to_s
-    "Фильм «#{@title}», #{@year}, реж. #{@creator}, #{super}"
+    "Фильм «#{@title}», #{@year}, реж. «#{@creator}», #{super}"
   end
 
   def update(params)

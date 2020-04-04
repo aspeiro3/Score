@@ -3,7 +3,8 @@ class ProductCollection
 
   PRODUCT_TYPES = {
     film: {dir: 'films', class: Film},
-    book: {dir: 'books', class: Book}
+    book: {dir: 'books', class: Book},
+    disk: {dir: 'disks', class: Disk}
   }
 
   # Cтатический метод from_dir, который считывает продукты из папки data, сам понимая, какие товары в какой папке лежат.
@@ -11,9 +12,9 @@ class ProductCollection
 
     products = []
 
-    PRODUCT_TYPES.each do |kay, valve|
-      path_folder = valve[:dir]
-      class_product = valve[:class]
+    PRODUCT_TYPES.each do |product, hesh|
+      path_folder = hesh[:dir]
+      class_product = hesh[:class]
 
       Dir["#{dir_path}/#{path_folder}/*.txt"].each do |path|
         products << class_product.from_file(path)
@@ -44,7 +45,7 @@ class ProductCollection
     end
 
     @products.reverse! if params[:order] == :asc
-    
+
     self
   end
 end
