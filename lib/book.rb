@@ -30,6 +30,10 @@ class Book < Product
     "Книга «#{@title}»,  автор — «#{@genre}»,, «#{@creator}», #{super}"
   end
 
+  def show_purchases
+    "Книга «#{@title}»,  автор — «#{@genre}»,, «#{@creator}», #{super}"
+  end
+
   def update(params)
     super
 

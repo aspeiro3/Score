@@ -32,6 +32,10 @@ class Disk < Product
     "Альбом «#{@title}», #{@year}, исп. «#{@creator}», «#{@genre}», #{super}"
   end
 
+  def show_purchases
+    "Альбом «#{@title}», #{@year}, исп. «#{@creator}», «#{@genre}», #{super}"
+  end
+
   def update(params)
     super
 

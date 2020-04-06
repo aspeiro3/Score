@@ -30,6 +30,10 @@ class Film < Product
     "Фильм «#{@title}», #{@year}, реж. «#{@creator}», #{super}"
   end
 
+  def show_purchases
+    "Фильм «#{@title}», #{@year}, реж. «#{@creator}», #{super}"
+  end
+
   def update(params)
     super
 

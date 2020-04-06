@@ -14,6 +14,10 @@ class Product
     "#{@price} руб. (осталось #{@balance})"
   end
 
+  def show_purchases
+    "#{@price} руб."
+  end
+
   def update(params)
     @price = params[:price] if params[:price]
     @balance = params[:balance] if params[:balance]

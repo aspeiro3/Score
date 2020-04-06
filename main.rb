@@ -7,7 +7,7 @@ require_relative 'lib/product_collection'
 collection = ProductCollection.from_dir("#{__dir__}/data")
 
 puts <<~END
-  Как Вы хотите отсортировать выбранный продукт?
+  Как Вы хотите отсортировать товар?
 
       1. По цене
       2. По остатку на складе
@@ -70,7 +70,16 @@ until user_choice == 0
   puts
 end
 
+grouping = []
+basket.each do |product|
+  replay = 0
+  basket.each do |item|
+    replay += 1 if product == item
+  end
+  grouping << "#{product.show_purchases} (количество: #{replay})"
+end
+
 puts "У Вас в корзине:"
-puts basket
+puts grouping.uniq
 puts
 puts "С Вас — #{purse_wallet} руб. Спасибо за покупки!"
